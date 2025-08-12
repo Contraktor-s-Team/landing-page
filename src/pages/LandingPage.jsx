@@ -365,8 +365,9 @@ function LandingPage() {
             </button>
           </div>
 
-          <div className="px-6 sm:px-0 w-full h-full">
-            <div className="w-full mx-auto lg:mx-0 lg:ml-auto sm:w-[462px] h-[304px] sm:h-[404px] bg-white rounded-2xl"></div>
+          <div className="px-6 sm:px-0 w-full sm:w-[462px] h-full">
+            <img src="/find-customers-img.png" alt="" className="" />
+            {/* <div className="w-full mx-auto lg:mx-0 lg:ml-auto sm:w-[462px] h-[304px] sm:h-[404px] bg-white rounded-2xl"></div> */}
           </div>
         </div>
       </div>
@@ -603,7 +604,7 @@ function LandingPage() {
       </div>
 
       {/* Call to Action */}
-      <div className="relative lg:container mx-auto px-6 sm:px-20 z-1">
+      <div className="relative lg:container mx-auto sm:px-20 z-1">
         <div className="flex flex-col lg:flex-row lg:justify-between items-center gap-10 text-center lg:text-left bg-pri-light-1 lg:pl-20 lg:pr-11.25 py-10 rounded-3xl">
           <div className="max-w-[500px]">
             <h1 className="font-manrope font-semibold text-[32px] leading-[1.2] mb-7.5">
@@ -671,7 +672,7 @@ function LandingPage() {
               </p>
 
               {/* App store buttons */}
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex gap-3 sm:gap-4">
                 <Link
                   to="#"
                   className="flex items-center gap-3 bg-pri-dark-2 px-4 py-3 hover:bg-pri-dark-1 rounded-full transition-colors"

@@ -3,7 +3,7 @@ import Header from "../components/Header";
 import HeroSection from "../components/HeroSection";
 import SectionHeader from "../components/SectionHeader";
 import {
-  artisans,
+  // artisans,
   hireArtisansSteps,
   ReasonItems,
   reviewsItems,
@@ -15,6 +15,7 @@ import { Link } from "react-router-dom";
 import { BsYoutube } from "react-icons/bs";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import LandingPageCta from "../components/LandingPageCta";
 
 const footerLinks = {
   forCustomers: {
@@ -60,7 +61,7 @@ const socialLinks = [
   { name: "Instagram", icon: <FaInstagram size={24} />, href: "#" },
 ];
 
-function LandingPage() {
+function CustomerLandingPage() {
   const [expandedItems, setExpandedItems] = useState({});
   const [showFAQHeader, setShowFAQHeader] = useState(true);
 
@@ -103,8 +104,18 @@ function LandingPage() {
 
   return (
     <div className="font-inter font-medium">
-      <Header />
-      <HeroSection />
+      <Header headerClass='border-neu-light-2' logo="/logo.png" />
+      <HeroSection
+        hClass="max-w-[508px]"
+        hText={'find trusted artisans near you'}
+                placeholderservice="What services are you looking for?"
+        bg={`linear-gradient(to bottom, white 0%, transparent 100%),
+      linear-gradient(to right, 
+        var(--color-pri-light-1) 0%, 
+        var(--color-warning-light-1) 50%, 
+        var(--color-success-light-1) 100%
+      )`}
+      />
 
       {/* Hire artisans steps */}
       <div className="lg:container mx-auto px-6 sm:px-8 my-15">
@@ -489,7 +500,6 @@ function LandingPage() {
               ))}
             </div>
           </div>
-
           Row 2
           <div className="overflow-hidden mt-4">
             <div className="flex gap-4 animate-marquee-reverse">
@@ -542,7 +552,9 @@ function LandingPage() {
 
       {/* FAQ Section */}
       <div className="lg:container mx-auto px-6 sm:px-8 my-20">
-        <h1 className="font-manrope font-semibold text-[26px] sm:text-[36px] text-center capitalize mb-16">frequently asked questions</h1>
+        <h1 className="font-manrope font-semibold text-[26px] sm:text-[36px] text-center capitalize mb-16">
+          frequently asked questions
+        </h1>
         {/* FAQ Header Section */}
         {showFAQHeader && (
           <div className="bg-pri-dark-2 text-white px-11.25 py-9.25 rounded-[20px] mb-6 relative">
@@ -573,7 +585,10 @@ function LandingPage() {
         {/* FAQ Items */}
         <div className="bg-white overflow-hidden flex flex-col gap-6">
           {faqItems.map((item, index) => (
-            <div key={index} className="border border-neu-light-2 rounded-[20px]">
+            <div
+              key={index}
+              className="border border-neu-light-2 rounded-[20px]"
+            >
               <button
                 onClick={() => toggleItem(index)}
                 className="w-full px-11.25 py-8 text-left flex items-center justify-between hover:bg-neu-light-1 transition-colors rounded-[20px]"
@@ -604,57 +619,18 @@ function LandingPage() {
       </div>
 
       {/* Call to Action */}
-      <div className="relative lg:container mx-auto sm:px-20 z-1">
-        <div className="flex flex-col lg:flex-row lg:justify-between items-center gap-10 text-center lg:text-left bg-pri-light-1 lg:pl-20 lg:pr-11.25 py-10 rounded-3xl">
-          <div className="max-w-[500px]">
-            <h1 className="font-manrope font-semibold text-[32px] leading-[1.2] mb-7.5">
-              Find 500+ skilled proffessionals on{" "}
-              <span className="text-pri-norm-3">Contraktor</span> today
-            </h1>
-            <button className="bg-pri-norm-1 hover:bg-pri-dark-1 text-white px-4.25 py-3 rounded-full mx-auto lg:mx-0 transition-colors duration-300 flex items-center gap-2.5">
-              Sign Up Now{" "}
-              <span className="">
-                <ArrowUpRight size={20} />
-              </span>
-            </button>
-          </div>
-          <div className="flex flex-col gap-4 lg:w-[380px]">
-            <div className="flex gap-4">
-              <div className="flex-2 h-[114px]">
-                <img
-                  src="/carpenter.jpg"
-                  alt=""
-                  className="w-full h-full object-cover rounded-2xl border-2 border-white"
-                />
-              </div>
-              <div className="flex-1 h-[114px]">
-                <img
-                  src="/elect-man.png"
-                  alt=""
-                  className="w-full h-full object-cover rounded-2xl border-2 border-white"
-                />
-              </div>
-            </div>
-
-            <div className="flex gap-4">
-              <div className="flex-1 h-[114px]">
-                <img
-                  src="/painter.jpg"
-                  alt=""
-                  className="w-full h-full object-cover rounded-2xl border-2 border-white"
-                />
-              </div>
-              <div className="flex-2 h-[114px]">
-                <img
-                  src="/cleaner.png"
-                  alt=""
-                  className="w-full h-full object-cover rounded-2xl border-2 border-white"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <LandingPageCta
+        hText="Find 500+ skilled professionals on"
+        hTextSpan="Contraktor"
+        img={
+          [
+            "/carpenter.jpg",
+            "/elect-man.png",
+            "/painter.jpg",
+            "/cleaner.png",
+          ]
+        }
+      />
 
       {/* Footer */}
       <footer className=" bg-bg-primary text-white -mt-[140px]">
@@ -810,4 +786,4 @@ function LandingPage() {
   );
 }
 
-export default LandingPage;
+export default CustomerLandingPage;

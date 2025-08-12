@@ -1,11 +1,16 @@
 import React from 'react'
-import LandingPage from './pages/LandingPage'
+import CustomerLandingPage from './pages/CustomerLandingPage'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import ArtisanLandingPage from './pages/ArtisanLandingPage';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <LandingPage />
+    element: <CustomerLandingPage />
+  },
+  { 
+    path: "/artisan",
+    element: <ArtisanLandingPage />
   }
   ])
 function App() {

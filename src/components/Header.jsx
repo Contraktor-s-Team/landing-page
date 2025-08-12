@@ -1,5 +1,4 @@
-import React from 'react'
-import logo from '/logo.png'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Menu } from 'lucide-react'
 
@@ -20,17 +19,36 @@ const navItems = [
 
   {
     name: "for artisan",
-    to: "#",
+    to: "/artisan",
   },
 ]
 
-function Header() {
+function Header( {headerClass, logo} ) {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 10;
+      if (isScrolled !== scrolled) {
+        setScrolled(isScrolled);
+      }
+    };
+
+    document.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      document.removeEventListener('scroll', handleScroll);
+    };
+  }, [scrolled]);
+
   return (
-    <div className="bg-white font-inter font-medium fixed top-0 right-0 left-0 flex items-center h-20 border-b border-neu-light-2 z-50">
+    <div className={`bg-transparent font-inter font-medium fixed top-0 right-0 left-0 flex items-center h-20 border-b z-50 transition-colors duration-300 ${scrolled ? 'bg-white' : 'bg-transparent'} ${headerClass}`}>
           <div className='w-full lg:container mx-auto px-6 sm:px-8'>
       <div className="flex items-center justify-between w-full">
         <div className="flex items-center gap-14">
+        <Link to="/">
           <img src={logo} alt="" className="" />
+          </Link>
+
           <nav className="lg:flex items-center gap-16 text-sm hidden ">
             {navItems.map((item, index) => (
               <Link key={index} to={item.to} className="capitalize text-neu-dark-1 hover:text-neu-norm-1 transition-colors duration-300">

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
 import HeroSection from "../components/HeroSection";
 import SectionHeader from "../components/SectionHeader";
@@ -8,8 +8,8 @@ import {
   artisanReviewsItems,
   //   customer,
   ReasonItems,
-  reviewsItems,
-  servicesItems,
+  // reviewsItems,
+  // servicesItems,
 } from "../utils/sectionsData";
 import { ArrowUpRight, Plus, X, MapPin, Zap, Calendar } from "lucide-react";
 import { GoStarFill } from "react-icons/go";
@@ -66,6 +66,21 @@ const socialLinks = [
 function ArtisanLandingPage() {
   const [expandedItems, setExpandedItems] = useState({});
   const [showFAQHeader, setShowFAQHeader] = useState(true);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 10;
+      if (isScrolled !== scrolled) {
+        setScrolled(isScrolled);
+      }
+    };
+
+    document.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      document.removeEventListener('scroll', handleScroll);
+    };
+  }, [scrolled]);
 
   const currentYear = new Date().getFullYear();
 
@@ -106,7 +121,7 @@ function ArtisanLandingPage() {
 
   return (
     <div className="font-inter font-medium">
-      <Header headerClass="border-[#182D43]" logo="/logoWhite.png" />
+      <Header headerClass={scrolled ? "border-neu-light-2" : "border-[#182D43]"} logo="/logoWhite.png" />
       <HeroSection
         hClass="text-white"
         hText={'find jobs, get paid, build reputation'}
@@ -119,7 +134,7 @@ linear-gradient(135deg, #0f172a, #00172F)
       />
 
       {/* Why Choose Contraktor */}
-      <div className="lg:container mx-auto px-6 sm:px-8 my-15">
+      <div className="lg:container mx-auto px-6 sm:px-8 my-25">
         <SectionHeader
           subText="features"
           text="Why Choose"
@@ -177,7 +192,7 @@ linear-gradient(135deg, #0f172a, #00172F)
       </div>
 
       {/* Recent Job Postings */}
-      <div className="bg-[#FAFAFA]">
+      {/* <div className="bg-[#FAFAFA]">
       <div className="lg:container mx-auto px-6 sm:px-8 py-15">
         <div className="flex flex-col lg:flex-row items-center gap-6 lg:justify-between">
           <h1 className="font-manrope font-semibold text-[26px] sm:text-[30px] capitalize">
@@ -190,10 +205,10 @@ linear-gradient(135deg, #0f172a, #00172F)
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-12">
           {artisanJobs.map((job) => (
     <Link
-    // to={`/artisan/find-jobs/${activeTab}/${job.id}`}
+    to={``}
     className="block bg-white rounded-lg p-4 border border-neu-light-2 overflow-hidden hover:shadow-md transition-shadow duration-200 hover:border-blue-200"
   >
-    {/* Main content */}
+    Main content
     <div className="">
       <div className="flex items-center justify-between mb-2">
         <div className="bg-gray-100 px-3.5 py-2 rounded-full flex items-center gap-2">
@@ -209,7 +224,7 @@ linear-gradient(135deg, #0f172a, #00172F)
       </p>
     </div>
 
-    {/* Profile section */}
+    Profile section
     <div className="px-4 py-4 border-y-2 border-gray-200 flex items-center gap-3 my-5.25">
       <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-sm font-medium text-gray-700">
         {job?.name && job.name.split(' ').length >= 2 
@@ -221,7 +236,7 @@ linear-gradient(135deg, #0f172a, #00172F)
       </div>
     </div>
 
-    {/* Location and date info */}
+    Location and date info
     <div className="text-sm text-gray-700 space-y-4">
       <div className="flex items-center gap-2">
         <MapPin className="text-blue-500" size={16}/>
@@ -240,7 +255,7 @@ linear-gradient(135deg, #0f172a, #00172F)
       </div>
     </div>
 
-    {/* Action buttons */}
+    Action buttons
     <div className="mt-6.5">
       <div className="flex gap-2">
           <div className="">
@@ -254,10 +269,10 @@ linear-gradient(135deg, #0f172a, #00172F)
           ))}
         </div>
       </div>
-      </div>
+      </div> */}
 
       {/* Find customers */}
-      <div className="lg:container mx-auto sm:px-8 my-15">
+      <div className="lg:container mx-auto sm:px-8 my-25">
         <div className="flex flex-col lg:flex-row items-center gap-20 lg:gap-6 lg:justify-between text-center lg:text-start bg-success-light-1 py-12.5 sm:p-7.5 sm:rounded-3xl">
           <div className="max-w-[552px] p-4.25 sm:p-0">
             <h1 className="font-manrope font-semibold text-[28px] sm:text-[40px] leading-[1.2] capitalize lg:max-w-[387px]">
@@ -284,7 +299,7 @@ linear-gradient(135deg, #0f172a, #00172F)
       </div>
 
       {/* Get things done on the go */}
-      <div className="lg:container mx-auto sm:px-8 my-15">
+      <div className="lg:container mx-auto sm:px-8 my-25">
         <div className="bg-pri-dark-3 py-12.5 sm:p-7.5 flex flex-col-reverse lg:flex-row items-center gap-18 lg:gap-6 sm:rounded-3xl">
           <div className="px-7.75 sm:px-0">
             <img src="/getdonepic.png" alt="" className="" />
@@ -346,7 +361,7 @@ linear-gradient(135deg, #0f172a, #00172F)
       </div>
 
       {/* Artisan Reviews */}
-      <div className="my-15">
+      <div className="my-25">
         <SectionHeader
           subText="customer reviews"
           text="Trusted by Professional Across Nigeria"
@@ -451,7 +466,7 @@ linear-gradient(135deg, #0f172a, #00172F)
       </div>
 
       {/* FAQ Section */}
-      <div className="lg:container mx-auto px-6 sm:px-8 my-20">
+      <div className="lg:container mx-auto px-6 sm:px-8 my-28">
         <h1 className="font-manrope font-semibold text-[26px] sm:text-[36px] text-center capitalize mb-16">
           frequently asked questions
         </h1>

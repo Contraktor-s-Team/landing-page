@@ -76,31 +76,51 @@ function CustomerLandingPage() {
 
   const faqItems = [
     {
-      question: "How do I know if an artisan is verified?",
+      question: "How does CONTRAKTOR work for customers?",
       answer:
-        "Verified artisans have completed our verification process, which includes identity verification, skill assessment, and background checks. Look for the verified badge on their profile.",
+        "It's simple. You post a task detailing the service you need. You can either set a budget for straightforward jobs or request a consultation for more complex work. Verified artisans will then apply or send you offers. You can review their profiles, chat with them, agree on a price, and then fund the job securely through our Escrow system.",
     },
     {
-      question: "Is payment made before or after the job is completed?",
+      question: "How do I know artisans are trustworthy and verified?",
       answer:
-        "Payment terms vary by project and artisan. Some may require a deposit upfront, while others work on completion-based payment. This will be clearly outlined in the quote and can be discussed during the hiring process.",
+        "Your trust is our top priority. Every artisan on CONTRAKTOR must pass a verification process managed by our on-the-ground Trade Representatives (TRs). This includes identity checks and skill validation. You can also see a verified badge on their profile, along with their average rating and reviews from previous customers.",
     },
     {
-      question: "Can I schedule a job for a later date?",
+      question: "How does payment work? Is my money safe?",
       answer:
-        "Yes, you can schedule jobs for future dates. When posting your task, simply specify your preferred timeline, and artisans will respond based on their availability for those dates.",
+        "Yes, your money is completely safe. We use a secure Escrow system. When you hire an artisan, your payment is held securely by CONTRAKTOR. We only release the funds to the artisan after you have confirmed that the job has been completed to your satisfaction. This protects both you and the artisan.",
     },
     {
-      question: "What if I'm not satisfied with the service?",
+      question: "What if I am not satisfied with the work?",
       answer:
-        "We have a satisfaction guarantee policy. If you're not happy with the completed work, you can report the issue through our platform, and we'll work to resolve it, which may include refunds or having the work redone.",
+        "We're here to help. If you're not satisfied with the service, you can first communicate with the artisan through our in-app messaging. If the issue cannot be resolved, you can raise a dispute. Our support team and the artisan's Trade Representative will step in to mediate and ensure a fair resolution. Your payment remains secure in Escrow until the dispute is settled.",
     },
     {
-      question: "Do artisans bring their own tools and materials?",
+      question: "How is the price for a job determined? Can I negotiate?",
       answer:
-        "This depends on the specific job and artisan. Most artisans bring their own tools, but materials are often discussed separately. When posting your task, specify what you'll provide versus what you expect the artisan to bring.",
+        "You have two options. For simple jobs, you can set your own budget, and artisans can accept or negotiate. For complex jobs where the scope isn't clear (like a car repair), you can request a consultation. An artisan will visit, assess the job, and provide a detailed quote. In both cases, you have the opportunity to negotiate the final price with the artisan directly through our messaging system before any work begins.",
     },
+    {
+      question: "Want to Login/Signup as a Artisan/ Service provider ?",
+      answer:
+        "Click Here or Download Contraktor (link to web page wgere to signup as artisan)",
+    },
+    {
+      question: "Is it Free ?",
+      answer:
+        "Yes, Contraktor provides equal opportunity for all talents, skilled service provider with location based visibility. Once you signed up, you can requests for all types of services from our trained and verified artisan closer to you at any date and time you scheduled",
+    },
+    {
+      question: "Is CONTRAKTOR available in my city/area?",
+      answer:
+        "We are launching progressively across Nigeria, starting with key cities and states. Please sign up, and the platform will let you know which services are available in your specific location. We are expanding rapidly!",
+    },
+    // {
+    //   question: "What is a consultation fee ? how is it calculated ?",
+    //   answer: "",
+    // },
   ];
+  
 
   return (
     <div className="font-inter font-medium">
@@ -118,7 +138,7 @@ function CustomerLandingPage() {
       />
 
       {/* Hire artisans steps */}
-      <div className="lg:container mx-auto px-6 sm:px-8 my-15">
+      <div className="lg:container mx-auto px-6 sm:px-8 my-25">
         <SectionHeader
           subText="how it works"
           text="Hire an artisan in 3 easy steps"
@@ -147,7 +167,7 @@ function CustomerLandingPage() {
       </div>
 
       {/* Why Choose Contraktor */}
-      <div className="lg:container mx-auto px-6 sm:px-8 my-15">
+      <div className="lg:container mx-auto px-6 sm:px-8 my-25">
         <SectionHeader
           subText="features"
           text="Why Choose"
@@ -205,7 +225,7 @@ function CustomerLandingPage() {
       </div>
 
       {/* Skilled professionals */}
-      <div className="bg-bg-primary mt-15 py-15">
+      <div className="bg-bg-primary mt-25 py-15">
         <div className="lg:container mx-auto px-6 sm:px-8">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-11.25">
             <div className="w-full max-w-[480px] text-center lg:text-start">
@@ -357,7 +377,7 @@ function CustomerLandingPage() {
       </div> */}
 
       {/* Find customers */}
-      <div className="lg:container mx-auto sm:px-8 my-15">
+      <div className="lg:container mx-auto sm:px-8 my-25">
         <div className="flex flex-col lg:flex-row items-center gap-20 lg:gap-6 lg:justify-between text-center lg:text-start bg-success-light-1 py-12.5 sm:p-7.5 sm:rounded-3xl">
           <div className="max-w-[552px] p-4.25 sm:p-0">
             <h1 className="font-manrope font-semibold text-[28px] sm:text-[40px] leading-[1.2] capitalize lg:max-w-[387px]">
@@ -384,7 +404,7 @@ function CustomerLandingPage() {
       </div>
 
       {/* Get things done on the go */}
-      <div className="lg:container mx-auto sm:px-8 my-15">
+      <div className="lg:container mx-auto sm:px-8 my-25">
         <div className="bg-pri-dark-3 py-12.5 sm:p-7.5 flex flex-col-reverse lg:flex-row items-center gap-18 lg:gap-6 sm:rounded-3xl">
           <div className="px-7.75 sm:px-0">
             <img src="/getdonepic.png" alt="" className="" />
@@ -446,7 +466,7 @@ function CustomerLandingPage() {
       </div>
 
       {/* Customer Reviews */}
-      <div className="my-15">
+      <div className="my-25">
         <SectionHeader
           subText="customer reviews"
           text="What Our Customers Are Saying"
@@ -551,7 +571,7 @@ function CustomerLandingPage() {
       </div>
 
       {/* FAQ Section */}
-      <div className="lg:container mx-auto px-6 sm:px-8 my-20">
+      <div className="lg:container mx-auto px-6 sm:px-8 my-28">
         <h1 className="font-manrope font-semibold text-[26px] sm:text-[36px] text-center capitalize mb-16">
           frequently asked questions
         </h1>

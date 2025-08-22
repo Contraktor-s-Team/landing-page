@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { Menu } from 'lucide-react'
 
 const navItems = [
   {
     name: "find jobs",
-    to: "#",
+    to: "/find-jobs",
   },
   {
     name: "post a job",
-    to: "#",
+    to: "/post-job",
   },
 
   {
     name: "why choose us",
-    to: "#",
+    to: "/why-choose-us",
   },
 
   {
@@ -51,9 +51,18 @@ function Header( {headerClass, logo} ) {
 
           <nav className="lg:flex items-center gap-16 text-sm hidden ">
             {navItems.map((item, index) => (
-              <Link key={index} to={item.to} className="capitalize text-neu-dark-1 hover:text-neu-norm-1 transition-colors duration-300">
-                {item.name}
-              </Link>
+       <NavLink
+       key={index}
+       to={item.to}
+       className={({ isActive }) =>
+         `capitalize transition-colors duration-300 ${
+           isActive && !scrolled ? "text-white hover:text-neu-light-3" : "text-neu-dark-1 hover:text-neu-norm-1"
+         } ${isActive && scrolled ? "text-pri-norm-1 hover:text-pri-dark-1" : "text-neu-dark-1 hover:text-neu-norm-1"}`
+       }
+     >
+       {item.name}
+     </NavLink>
+   
             ))}
           </nav>
         </div>

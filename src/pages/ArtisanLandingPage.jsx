@@ -121,7 +121,7 @@ function ArtisanLandingPage() {
 
   return (
     <div className="font-inter font-medium">
-      <Header headerClass={scrolled ? "border-neu-light-2" : "border-[#182D43]"} logo="/logoWhite.png" />
+      <Header headerClass={scrolled ? "border-neu-light-2" : "border-[#182D43]"} logo={scrolled ? "/logo.png" : "/logoWhite.png"} />
       <HeroSection
         hClass="text-white"
         hText={'find jobs, get paid, build reputation'}

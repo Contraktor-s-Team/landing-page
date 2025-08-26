@@ -120,15 +120,17 @@ function CustomerLandingPage() {
     //   answer: "",
     // },
   ];
-  
 
   return (
     <div className="font-inter font-medium">
-      <Header headerClass='border-neu-light-2' logo="/logo.png" />
+      <Header headerClass="border-neu-light-2" logo="/logo.png" />
       <HeroSection
         hClass="max-w-[508px]"
-        hText={'find trusted artisans near you'}
-                placeholderservice="What services are you looking for?"
+        hText={"find trusted artisans near you"}
+        hDesc={
+          "Post a task and get quotes from verified professionals near you."
+        }
+        placeholderservice="What services are you looking for?"
         bg={`linear-gradient(to bottom, white 0%, transparent 100%),
       linear-gradient(to right, 
         var(--color-pri-light-1) 0%, 
@@ -642,14 +644,12 @@ function CustomerLandingPage() {
       <LandingPageCta
         hText="Find 500+ skilled professionals on"
         hTextSpan="Contraktor"
-        img={
-          [
-            "/carpenter.jpg",
-            "/elect-man.png",
-            "/painter.jpg",
-            "/cleaner.png",
-          ]
-        }
+        img={[
+          "/carpenter.jpg",
+          "/elect-man.png",
+          "/painter.jpg",
+          "/cleaner.png",
+        ]}
       />
 
       {/* Footer */}

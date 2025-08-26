@@ -3,8 +3,8 @@ import Header from "../components/Header";
 import HeroSection from "../components/HeroSection";
 import SectionHeader from "../components/SectionHeader";
 import {
-    artisanJobs,
-    artisanReasonItems,
+  artisanJobs,
+  artisanReasonItems,
   artisanReviewsItems,
   //   customer,
   ReasonItems,
@@ -76,9 +76,9 @@ function ArtisanLandingPage() {
       }
     };
 
-    document.addEventListener('scroll', handleScroll, { passive: true });
+    document.addEventListener("scroll", handleScroll, { passive: true });
     return () => {
-      document.removeEventListener('scroll', handleScroll);
+      document.removeEventListener("scroll", handleScroll);
     };
   }, [scrolled]);
 
@@ -121,11 +121,17 @@ function ArtisanLandingPage() {
 
   return (
     <div className="font-inter font-medium">
-      <Header headerClass={scrolled ? "border-neu-light-2" : "border-[#182D43]"} logo={scrolled ? "/logo.png" : "/logoWhite.png"} />
+      <Header
+        headerClass={scrolled ? "border-neu-light-2" : "border-[#182D43]"}
+        logo={scrolled ? "/logo.png" : "/logoWhite.png"}
+      />
       <HeroSection
         hClass="text-white"
-        hText={'find jobs, get paid, build reputation'}
-        placeholderservice='Search for jobs by service or keyword…'
+        hText={"find jobs, get paid, build reputation"}
+        hDesc={
+          "Join thousands of skilled artisans using Contraktor to grow their craft and earn steadily."
+        }
+        placeholderservice="Search for jobs by service or keyword…"
         bg={`
 radial-gradient(ellipse at bottom left, rgba(158, 217, 255, 0.4) 0%, rgba(158, 217, 255, 0.2) 15%, transparent 40%),
 radial-gradient(ellipse at bottom right, rgba(158, 255, 165, 0.4) 0%, rgba(158, 255, 165, 0.2) 20%, transparent 50%),
@@ -371,95 +377,99 @@ linear-gradient(135deg, #0f172a, #00172F)
           Row 1
           <div className="overflow-hidden">
             <div className="flex gap-4 animate-marquee">
-              {[...artisanReviewsItems, ...artisanReviewsItems].map((review, index) => (
-                <div
-                  key={`row1-${index}`}
-                  className="border-[1.5px] border-neu-light-2 p-5 sm:p-7 rounded-[10px] w-[260px] sm:w-[409px] flex-shrink-0"
-                >
-                  <div className="h-full flex flex-col">
-                    <div className="flex-grow">
-                      <p className="whitespace-normal text-sm sm:text-base text-justify">
-                        {`"${review.text}"`}
-                      </p>
-                      <div className="text-warning-norm-1 mt-3.5 flex">
-                        {[...Array(5)].map((_, i) => (
-                          <GoStarFill
-                            key={i}
-                            size={18}
-                            className="sm:size-[20px]"
-                          />
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className="flex items-end justify-between mt-4 sm:mt-0">
-                      <div className="flex items-center gap-3">
-                        <img
-                          src="/avatar1.jpg"
-                          alt=""
-                          className="h-9 w-9 sm:h-10.5 sm:w-10.5 rounded-full"
-                        />
-                        <div className="text-neu-norm-3 text-xs sm:text-sm">
-                          <p>{review.name}</p>
-                          <p>{review.date}</p>
+              {[...artisanReviewsItems, ...artisanReviewsItems].map(
+                (review, index) => (
+                  <div
+                    key={`row1-${index}`}
+                    className="border-[1.5px] border-neu-light-2 p-5 sm:p-7 rounded-[10px] w-[260px] sm:w-[409px] flex-shrink-0"
+                  >
+                    <div className="h-full flex flex-col">
+                      <div className="flex-grow">
+                        <p className="whitespace-normal text-sm sm:text-base text-justify">
+                          {`"${review.text}"`}
+                        </p>
+                        <div className="text-warning-norm-1 mt-3.5 flex">
+                          {[...Array(5)].map((_, i) => (
+                            <GoStarFill
+                              key={i}
+                              size={18}
+                              className="sm:size-[20px]"
+                            />
+                          ))}
                         </div>
                       </div>
-                      <img
-                        src="/QuotesIcon.png"
-                        alt=""
-                        className="sm:-mb-4.5 w-10 sm:w-auto"
-                      />
+
+                      <div className="flex items-end justify-between mt-4 sm:mt-0">
+                        <div className="flex items-center gap-3">
+                          <img
+                            src="/avatar1.jpg"
+                            alt=""
+                            className="h-9 w-9 sm:h-10.5 sm:w-10.5 rounded-full"
+                          />
+                          <div className="text-neu-norm-3 text-xs sm:text-sm">
+                            <p>{review.name}</p>
+                            <p>{review.date}</p>
+                          </div>
+                        </div>
+                        <img
+                          src="/QuotesIcon.png"
+                          alt=""
+                          className="sm:-mb-4.5 w-10 sm:w-auto"
+                        />
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                )
+              )}
             </div>
           </div>
           Row 2
           <div className="overflow-hidden mt-4">
             <div className="flex gap-4 animate-marquee-reverse">
-              {[...artisanReviewsItems, ...artisanReviewsItems].map((review, index) => (
-                <div
-                  key={`row2-${index}`}
-                  className="border-[1.5px] border-neu-light-2 p-5 sm:p-7 rounded-[10px] w-[260px] sm:w-[409px] flex-shrink-0"
-                >
-                  <div className="h-full flex flex-col">
-                    <div className="flex-grow">
-                      <p className="whitespace-normal text-sm sm:text-base text-justify">
-                        {`"${review.text}"`}
-                      </p>
-                      <div className="text-warning-norm-1 mt-3.5 flex">
-                        {[...Array(5)].map((_, i) => (
-                          <GoStarFill
-                            key={i}
-                            size={18}
-                            className="sm:size-[20px]"
-                          />
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className="flex items-end justify-between mt-4 sm:mt-0">
-                      <div className="flex items-center gap-3">
-                        <img
-                          src="/avatar1.jpg"
-                          alt=""
-                          className="h-9 w-9 sm:h-10.5 sm:w-10.5 rounded-full"
-                        />
-                        <div className="text-neu-norm-3 text-xs sm:text-sm">
-                          <p>{review.name}</p>
-                          <p>{review.date}</p>
+              {[...artisanReviewsItems, ...artisanReviewsItems].map(
+                (review, index) => (
+                  <div
+                    key={`row2-${index}`}
+                    className="border-[1.5px] border-neu-light-2 p-5 sm:p-7 rounded-[10px] w-[260px] sm:w-[409px] flex-shrink-0"
+                  >
+                    <div className="h-full flex flex-col">
+                      <div className="flex-grow">
+                        <p className="whitespace-normal text-sm sm:text-base text-justify">
+                          {`"${review.text}"`}
+                        </p>
+                        <div className="text-warning-norm-1 mt-3.5 flex">
+                          {[...Array(5)].map((_, i) => (
+                            <GoStarFill
+                              key={i}
+                              size={18}
+                              className="sm:size-[20px]"
+                            />
+                          ))}
                         </div>
                       </div>
-                      <img
-                        src="/QuotesIcon.png"
-                        alt=""
-                        className="sm:-mb-4.5 w-10 sm:w-auto"
-                      />
+
+                      <div className="flex items-end justify-between mt-4 sm:mt-0">
+                        <div className="flex items-center gap-3">
+                          <img
+                            src="/avatar1.jpg"
+                            alt=""
+                            className="h-9 w-9 sm:h-10.5 sm:w-10.5 rounded-full"
+                          />
+                          <div className="text-neu-norm-3 text-xs sm:text-sm">
+                            <p>{review.name}</p>
+                            <p>{review.date}</p>
+                          </div>
+                        </div>
+                        <img
+                          src="/QuotesIcon.png"
+                          alt=""
+                          className="sm:-mb-4.5 w-10 sm:w-auto"
+                        />
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                )
+              )}
             </div>
           </div>
         </div>
@@ -534,7 +544,7 @@ linear-gradient(135deg, #0f172a, #00172F)
       </div>
 
       {/* Call to Action */}
-      <LandingPageCta hText={'Start Earning with Your Skills Today'} />
+      <LandingPageCta hText={"Start Earning with Your Skills Today"} />
 
       {/* Footer */}
       <footer className=" bg-bg-primary text-white -mt-[140px]">

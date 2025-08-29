@@ -367,7 +367,7 @@ linear-gradient(135deg, #0f172a, #00172F)
       </div>
 
       {/* Artisan Reviews */}
-      <div className="my-25">
+      {/* <div className="my-25">
         <SectionHeader
           subText="customer reviews"
           text="Trusted by Professional Across Nigeria"
@@ -473,7 +473,7 @@ linear-gradient(135deg, #0f172a, #00172F)
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* FAQ Section */}
       <div className="lg:container mx-auto px-6 sm:px-8 my-28">

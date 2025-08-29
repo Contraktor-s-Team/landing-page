@@ -468,7 +468,7 @@ function CustomerLandingPage() {
       </div>
 
       {/* Customer Reviews */}
-      <div className="my-25">
+      {/* <div className="my-25">
         <SectionHeader
           subText="customer reviews"
           text="What Our Customers Are Saying"
@@ -570,7 +570,7 @@ function CustomerLandingPage() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* FAQ Section */}
       <div className="lg:container mx-auto px-6 sm:px-8 my-28">

@@ -391,7 +391,7 @@ function CustomerLandingPage() {
               nearby.
             </p>
             <button className="bg-success-dark-1 hover:bg-success-norm-1 text-white px-4.25 py-3 rounded-full mx-auto lg:mx-0 transition-colors duration-300 flex items-center gap-2.5">
-              Sign Up as an Artisan{" "}
+              Sign Up as a Customer{" "}
               <span className="">
                 <ArrowUpRight size={20} />
               </span>

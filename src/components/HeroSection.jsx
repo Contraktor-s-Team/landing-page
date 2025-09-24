@@ -17,9 +17,10 @@ function HeroSection({ bg, hClass, hText, hDesc, placeholderservice }) {
     const fetchCategories = async () => {
       try {
         const response = await fetch(
-          "http://staging.api.contraktor.africa/api/ArtisanCategory"
+          "https://dev.api.contraktor.africa/api/ArtisanCategory"
         );
         const data = await response.json();
+        console.log(data);
         if (data.isSuccess) {
           setCategories(data.data);
         }
@@ -33,9 +34,10 @@ function HeroSection({ bg, hClass, hText, hDesc, placeholderservice }) {
     const fetchStates = async () => {
       try {
         const response = await fetch(
-          "http://staging.api.contraktor.africa/api/CustomAddress/all"
+          "https://dev.api.contraktor.africa/api/CustomAddress/all"
         );
         const data = await response.json();
+        console.log(data);
         if (data.isSuccess) {
           setStates(data.data);
         }

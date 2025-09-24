@@ -93,29 +93,29 @@ function ArtisanLandingPage() {
 
   const faqItems = [
     {
-      question: "How do I know if an artisan is verified?",
+      question: "I'm an artisan. How do I get jobs on CONTRAKTOR?",
       answer:
-        "Verified artisans have completed our verification process, which includes identity verification, skill assessment, and background checks. Look for the verified badge on their profile.",
+        "Once you create a profile and become a verified artisan, you'll get access to our 'Browse Tasks' feed. You will see a list of customer-posted jobs that match your skills and location. You can then apply for jobs that suit you, either by accepting a customer's budget, making a counter-offer, or applying for a consultation visit.",
     },
     {
-      question: "Is payment made before or after the job is completed?",
+      question: "As an artisan, how and when do I get paid?",
       answer:
-        "Payment terms vary by project and artisan. Some may require a deposit upfront, while others work on completion-based payment. This will be clearly outlined in the quote and can be discussed during the hiring process.",
+        "We ensure you get paid securely and on time. When a customer hires you, they fund the full job amount into our Escrow system. For larger jobs, an initial percentage is often released to you to help with materials. Once you mark the job as complete and the customer confirms their satisfaction, the final payment is released directly to your linked bank account.",
     },
     {
-      question: "Can I schedule a job for a later date?",
+      question: "How much does it cost to use CONTRAKTOR?",
       answer:
-        "Yes, you can schedule jobs for future dates. When posting your task, simply specify your preferred timeline, and artisans will respond based on their availability for those dates.",
+        "Creating a profile and browsing tasks is free for both customers and artisans. CONTRAKTOR charges a small, transparent service fee (a percentage of the total job price) only upon the successful completion of a job. This fee helps us maintain the platform, provide support, and ensure a secure experience for everyone.",
     },
     {
-      question: "What if I'm not satisfied with the service?",
+      question: "Why do artisans need to be verified (KYC)?",
       answer:
-        "We have a satisfaction guarantee policy. If you're not happy with the completed work, you can report the issue through our platform, and we'll work to resolve it, which may include refunds or having the work redone.",
+        "Our verification process is what builds trust in the CONTRAKTOR community. By verifying your identity and skills, you become a 'Verified Artisan,' which makes your profile more attractive to high-quality customers, allows you to command fair prices, and gives you access to all platform features, including our secure payment system.",
     },
     {
-      question: "Do artisans bring their own tools and materials?",
+      question: "Is CONTRAKTOR available in my city/area?",
       answer:
-        "This depends on the specific job and artisan. Most artisans bring their own tools, but materials are often discussed separately. When posting your task, specify what you'll provide versus what you expect the artisan to bring.",
+        "We are launching progressively across Nigeria, starting with key cities and states. Please sign up, and the platform will let you know which services are available in your specific location. We are expanding rapidly!",
     },
   ];
 
@@ -124,6 +124,7 @@ function ArtisanLandingPage() {
       <Header
         headerClass={scrolled ? "border-neu-light-2" : "border-[#182D43]"}
         logo={scrolled ? "/logo.png" : "/logoWhite.png"}
+        isArtisan={true}
       />
       <HeroSection
         hClass="text-white"
@@ -140,7 +141,10 @@ linear-gradient(135deg, #0f172a, #00172F)
       />
 
       {/* Why Choose Contraktor */}
-      <div className="lg:container mx-auto px-6 sm:px-8 my-25">
+      <div
+        id="why-choose-artisan"
+        className="lg:container mx-auto px-6 sm:px-8 my-25"
+      >
         <SectionHeader
           subText="features"
           text="Why Choose"
@@ -311,12 +315,12 @@ linear-gradient(135deg, #0f172a, #00172F)
             <img src="/getdonepic.png" alt="" className="" />
           </div>
           <div className="max-w-[552px] mx-auto px-4 sm:px-0 text-center lg:text-start">
-            <h1 className="font-manrope font-semibold text-[28px] sm:text-[40px] leading-[1.2] text-white capitalize">
-              get things done on the go
+            <h1 className="font-manrope font-semibold text-[24px] sm:text-[36px] leading-[1.2] text-white capitalize">
+              Grow Your Business On The Go
             </h1>
             <p className="text-neu-light-3 my-7.75">
-              Download the mobile app to post jobs, connect with artisans, and
-              manage everything from your phone — anytime, anywhere.
+              Download the mobile app to find jobs, connect with customers, and
+              manage your work anytime, anywhere.
             </p>
             {/* App store buttons */}
             <div className="flex justify-center lg:justify-start gap-4">
@@ -491,17 +495,17 @@ linear-gradient(135deg, #0f172a, #00172F)
             </button>
 
             <h1 className="font-manrope font-semibold text-[18px] mb-4">
-              How do I hire an artisan on the platform?
+              How do I start earning as an artisan on CONTRAKTOR?
             </h1>
 
             <div className="space-y-2 text-pri-light-2">
               <p>
-                Simply post a task describing the service you need, and
-                available artisans will respond with quotes.
+                Create your profile, get verified, and start browsing available
+                jobs that match your skills.
               </p>
               <p>
-                You can review their profiles, compare prices, and hire the one
-                that best fits your needs.
+                Apply for jobs, negotiate prices, and get paid securely through
+                our Escrow system.
               </p>
             </div>
           </div>
@@ -554,11 +558,11 @@ linear-gradient(135deg, #0f172a, #00172F)
             {/* Left section - App download */}
             <div className="lg:max-w-md">
               <h2 className="font-manrope font-semibold sm:text-2xl leading-[1.2] mb-4">
-                Get Things Done On the Go
+                Grow Your Business On The Go
               </h2>
               <p className="text-neu-light-3 font-normal mb-5.5 leading-relaxed">
-                Download the mobile app to post jobs, connect with artisans, and
-                manage everything from your phone
+                Download the mobile app to find jobs, connect with customers,
+                and manage your work anytime, anywhere.
               </p>
 
               {/* App store buttons */}
@@ -671,7 +675,8 @@ linear-gradient(135deg, #0f172a, #00172F)
             <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
               {/* Copyright */}
               <p className="text-neu-norm-1 text-sm">
-                ©{currentYear} Contraktor. All rights reserved
+                ©{currentYear} Contraktor by Distrolink Services. All rights
+                reserved
               </p>
 
               {/* Social links */}

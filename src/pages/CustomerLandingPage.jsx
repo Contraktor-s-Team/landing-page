@@ -67,6 +67,21 @@ function CustomerLandingPage() {
 
   const currentYear = new Date().getFullYear();
 
+  const handleSignUp = () => {
+    // You can customize this function based on your needs
+    // For now, it will redirect to the signup page
+    window.open("https://app.contraktor.com.ng/signup", "_blank");
+  };
+
+  const handleExploreServices = () => {
+    // You can customize this function based on your needs
+    // For now, it will redirect to the services page
+    window.open(
+      "https://app.contraktor.com.ng/customer/find-artisans/all",
+      "_blank"
+    );
+  };
+
   const toggleItem = (index) => {
     setExpandedItems((prev) => ({
       ...prev,
@@ -101,12 +116,7 @@ function CustomerLandingPage() {
         "You have two options. For simple jobs, you can set your own budget, and artisans can accept or negotiate. For complex jobs where the scope isn't clear (like a car repair), you can request a consultation. An artisan will visit, assess the job, and provide a detailed quote. In both cases, you have the opportunity to negotiate the final price with the artisan directly through our messaging system before any work begins.",
     },
     {
-      question: "Want to Login/Signup as a Artisan/ Service provider ?",
-      answer:
-        "Click Here or Download Contraktor (link to web page wgere to signup as artisan)",
-    },
-    {
-      question: "Is it Free ?",
+      question: "Is it Free?",
       answer:
         "Yes, Contraktor provides equal opportunity for all talents, skilled service provider with location based visibility. Once you signed up, you can requests for all types of services from our trained and verified artisan closer to you at any date and time you scheduled",
     },
@@ -115,16 +125,32 @@ function CustomerLandingPage() {
       answer:
         "We are launching progressively across Nigeria, starting with key cities and states. Please sign up, and the platform will let you know which services are available in your specific location. We are expanding rapidly!",
     },
-    // {
-    //   question: "What is a consultation fee ? how is it calculated ?",
-    //   answer: "",
-    // },
+    {
+      question: "What is a consultation fee? How is it calculated?",
+      answer:
+        "If the service you requested for requires that the Artisan visit for inspection or consultation, You will be required to pay a little token to cover the cost of transportation of a skilled artisan to any location of your choice. At all times, Contraktor allows you to be in charge!",
+    },
+    {
+      question: "What is a service fee?",
+      answer:
+        "The service fee is a customer fee that appears on the price breakdown after you agree to a service quote at checkout on the Contraktor app. The service fee depends on your Job quotes subtotal, that is, a percentage of your bill to get your job done. We understand the service fee increases based on the type and volume of work you want done, so we've capped it to prevent it from getting too excessive.",
+    },
+    {
+      question: "Why do we charge this?",
+      answer:
+        "Facilitating skilled artisan services delivery to you anytime and anywhere require diligence and professionalism, It's also costly to operate. To continue to serve your needs, we must cover technology costs, transaction processing fees, and support to do this effectively. The fees you see as you approve a quote ensure we stay efficient in service delivery and continue to be your favorite Contraktor.",
+    },
   ];
 
   return (
     <div className="font-inter font-medium">
-      <Header headerClass="border-neu-light-2" logo="/logo.png" />
+      <Header
+        headerClass="border-neu-light-2"
+        logo="/logo.png"
+        isArtisan={false}
+      />
       <HeroSection
+        id="hero"
         hClass="max-w-[508px]"
         hText={"find trusted artisans near you"}
         hDesc={
@@ -169,7 +195,10 @@ function CustomerLandingPage() {
       </div>
 
       {/* Why Choose Contraktor */}
-      <div className="lg:container mx-auto px-6 sm:px-8 my-25">
+      <div
+        id="why-choose-us"
+        className="lg:container mx-auto px-6 sm:px-8 my-25"
+      >
         <SectionHeader
           subText="features"
           text="Why Choose"
@@ -235,7 +264,10 @@ function CustomerLandingPage() {
                 skilled professionals across 300+ services
               </h2>
             </div>
-            <button className="cursor-pointer bg-pri-norm-1 hover:bg-pri-dark-1 text-white px-6 py-3 rounded-full transition-colors duration-300">
+            <button
+              onClick={handleExploreServices}
+              className="cursor-pointer bg-pri-norm-1 hover:bg-pri-dark-1 text-white px-6 py-3 rounded-full transition-colors duration-300"
+            >
               Explore all services
             </button>
           </div>
@@ -390,7 +422,10 @@ function CustomerLandingPage() {
               showcase your skills, and get job requests from real customers
               nearby.
             </p>
-            <button className="bg-success-dark-1 hover:bg-success-norm-1 text-white px-4.25 py-3 rounded-full mx-auto lg:mx-0 transition-colors duration-300 flex items-center gap-2.5">
+            <button
+              onClick={handleSignUp}
+              className="bg-success-dark-1 hover:bg-success-norm-1 text-white px-4.25 py-3 rounded-full mx-auto lg:mx-0 transition-colors duration-300 flex items-center gap-2.5"
+            >
               Sign Up as a Customer{" "}
               <span className="">
                 <ArrowUpRight size={20} />
@@ -412,12 +447,12 @@ function CustomerLandingPage() {
             <img src="/getdonepic.png" alt="" className="" />
           </div>
           <div className="max-w-[552px] mx-auto px-4 sm:px-0 text-center lg:text-start">
-            <h1 className="font-manrope font-semibold text-[28px] sm:text-[40px] leading-[1.2] text-white capitalize">
+            <h1 className="font-manrope font-semibold text-[24px] sm:text-[36px] leading-[1.2] text-white capitalize">
               get things done on the go
             </h1>
             <p className="text-neu-light-3 my-7.75">
               Download the mobile app to post jobs, connect with artisans, and
-              manage everything from your phone — anytime, anywhere.
+              manage everything from your phone
             </p>
             {/* App store buttons */}
             <div className="flex justify-center lg:justify-start gap-4">
@@ -777,7 +812,8 @@ function CustomerLandingPage() {
             <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
               {/* Copyright */}
               <p className="text-neu-norm-1 text-sm">
-                ©{currentYear} Contraktor. All rights reserved
+                ©{currentYear} Contraktor by Distrolink Services. All rights
+                reserved
               </p>
 
               {/* Social links */}

@@ -93,7 +93,7 @@ function CustomerLandingPage() {
     {
       question: "How does CONTRAKTOR work for customers?",
       answer:
-        "It's simple. You post a task detailing the service you need. You can either set a budget for straightforward jobs or request a consultation for more complex work. Verified artisans will then apply or send you offers. You can review their profiles, chat with them, agree on a price, and then fund the job securely through our Escrow system.",
+        "It's simple. You post a task detailing the service you need. You can either set a budget for straightforward jobs or request a consultation for more complex work. Verified artisans will then apply or send you offers. You can review their profiles, chat with them, agree on a price, and then fund the job through our secured platform.",
     },
     {
       question: "How do I know artisans are trustworthy and verified?",
@@ -103,12 +103,12 @@ function CustomerLandingPage() {
     {
       question: "How does payment work? Is my money safe?",
       answer:
-        "Yes, your money is completely safe. We use a secure Escrow system. When you hire an artisan, your payment is held securely by CONTRAKTOR. We only release the funds to the artisan after you have confirmed that the job has been completed to your satisfaction. This protects both you and the artisan.",
+        "Yes, your money is completely safe. We use a secured payment system. When you hire an artisan, your payment is guaranteed by CONTRAKTOR. Once you confirm Job is done to your satisfaction, the Artisan get paid for completing your tasks. This protects both you and the artisan.",
     },
     {
       question: "What if I am not satisfied with the work?",
       answer:
-        "We're here to help. If you're not satisfied with the service, you can first communicate with the artisan through our in-app messaging. If the issue cannot be resolved, you can raise a dispute. Our support team and the artisan's Trade Representative will step in to mediate and ensure a fair resolution. Your payment remains secure in Escrow until the dispute is settled.",
+        "We're here to help. If you're not satisfied with the service, you can first communicate with the artisan through our in-app messaging. If the issue cannot be resolved, you can raise a dispute. Our support team and the artisan's Trade Representative will step in to mediate and ensure a fair resolution. Your payment remains secured until the dispute is resolved to your satisfaction.",
     },
     {
       question: "How is the price for a job determined? Can I negotiate?",
@@ -116,7 +116,7 @@ function CustomerLandingPage() {
         "You have two options. For simple jobs, you can set your own budget, and artisans can accept or negotiate. For complex jobs where the scope isn't clear (like a car repair), you can request a consultation. An artisan will visit, assess the job, and provide a detailed quote. In both cases, you have the opportunity to negotiate the final price with the artisan directly through our messaging system before any work begins.",
     },
     {
-      question: "Is it Free?",
+      question: "Is it Free ?",
       answer:
         "Yes, Contraktor provides equal opportunity for all talents, skilled service provider with location based visibility. Once you signed up, you can requests for all types of services from our trained and verified artisan closer to you at any date and time you scheduled",
     },
@@ -126,19 +126,19 @@ function CustomerLandingPage() {
         "We are launching progressively across Nigeria, starting with key cities and states. Please sign up, and the platform will let you know which services are available in your specific location. We are expanding rapidly!",
     },
     {
-      question: "What is a consultation fee? How is it calculated?",
+      question: "What is a consultation fee ? how is it calculated ?",
       answer:
-        "If the service you requested for requires that the Artisan visit for inspection or consultation, You will be required to pay a little token to cover the cost of transportation of a skilled artisan to any location of your choice. At all times, Contraktor allows you to be in charge!",
+        "If the service you requested for requires that the Artisan visit for inspection or consultation, You will be required to pay a little token to cover the cost of transportation of a skilled artisan to any location of your choice. At all times, Contraktor allows you to be in charge !",
     },
     {
-      question: "What is a service fee?",
+      question: "what is a service fee ?",
       answer:
-        "The service fee is a customer fee that appears on the price breakdown after you agree to a service quote at checkout on the Contraktor app. The service fee depends on your Job quotes subtotal, that is, a percentage of your bill to get your job done. We understand the service fee increases based on the type and volume of work you want done, so we've capped it to prevent it from getting too excessive.",
+        "The service fee is a customer fee that appears on the price breakdown after you agree to a service quote at checkout on the Contraktor app, the service fee depends on your Job quotes subtotal, that is, a percentage of your bill to get your job done. We understand the service fee increases base on the type and volume of work you want done, so we've capped it to prevent it from getting too excessive.",
     },
     {
-      question: "Why do we charge this?",
+      question: "why do we charge this ?",
       answer:
-        "Facilitating skilled artisan services delivery to you anytime and anywhere require diligence and professionalism, It's also costly to operate. To continue to serve your needs, we must cover technology costs, transaction processing fees, and support to do this effectively. The fees you see as you approve a quote ensure we stay efficient in service delivery and continue to be your favorite Contraktor.",
+        "Facilitating skilled artisan services delivery to you anytime and anywhere require diligence and professionalism, Its also costly to operate. To continue to serve your needs, we must cover technology costs, transaction processing fees, and support to do this effectively. The fees you see as you approve a quote ensure we stay efficient in service delivery and continue to be your favorite Contraktor.",
     },
   ];
 

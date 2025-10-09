@@ -100,7 +100,7 @@ function ArtisanLandingPage() {
     {
       question: "As an artisan, how and when do I get paid?",
       answer:
-        "We ensure you get paid securely and on time. When a customer hires you, they fund the full job amount into our Escrow system. For larger jobs, an initial percentage is often released to you to help with materials. Once you mark the job as complete and the customer confirms their satisfaction, the final payment is released directly to your linked bank account.",
+        "We ensure you get paid securely and on time. When a customer hires you, they deposit the full job amount into our secure payment system. For larger projects, an initial portion is often released to help cover materials. Once you mark the job as complete and the customer confirms their satisfaction, the remaining payment is transferred directly to your linked bank account.",
     },
     {
       question: "How much does it cost to use CONTRAKTOR?",

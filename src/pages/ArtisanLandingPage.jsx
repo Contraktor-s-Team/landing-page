@@ -201,86 +201,6 @@ linear-gradient(135deg, #0f172a, #00172F)
         </div>
       </div>
 
-      {/* Recent Job Postings */}
-      {/* <div className="bg-[#FAFAFA]">
-      <div className="lg:container mx-auto px-6 sm:px-8 py-15">
-        <div className="flex flex-col lg:flex-row items-center gap-6 lg:justify-between">
-          <h1 className="font-manrope font-semibold text-[26px] sm:text-[30px] capitalize">
-          <span className="text-pri-norm-3">recent</span> job postings
-          </h1>
-          <button className="cursor-pointer bg-pri-norm-1 hover:bg-pri-dark-1 text-white px-6 py-3 rounded-full transition-colors duration-300">
-            View all artisans
-          </button>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-12">
-          {artisanJobs.map((job) => (
-    <Link
-    to={``}
-    className="block bg-white rounded-lg p-4 border border-neu-light-2 overflow-hidden hover:shadow-md transition-shadow duration-200 hover:border-blue-200"
-  >
-    Main content
-    <div className="">
-      <div className="flex items-center justify-between mb-2">
-        <div className="bg-gray-100 px-3.5 py-2 rounded-full flex items-center gap-2">
-          <Zap size={16} />
-          <span className="text-gray-600 font-medium text-sm">{job.category}</span>
-        </div>
-      </div>
-      <h2 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2">
-      {job.title}
-      </h2>
-      <p className="text-gray-700 text-sm leading-relaxed line-clamp-2 h-[50px]">
-        {job.description}
-      </p>
-    </div>
-
-    Profile section
-    <div className="px-4 py-4 border-y-2 border-gray-200 flex items-center gap-3 my-5.25">
-      <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-sm font-medium text-gray-700">
-        {job?.name && job.name.split(' ').length >= 2 
-          ? job.name.split(' ')[0][0] + job.name.split(' ')[1][0]
-          : job?.name ? job.name[0] : 'C'}
-      </div>
-      <div>
-        <p className="text-gray-900 text-sm font-medium">{job?.artisanName ? job?.artisanName : "Customer Details Unavailable"}</p>
-      </div>
-    </div>
-
-    Location and date info
-    <div className="text-sm text-gray-700 space-y-4">
-      <div className="flex items-center gap-2">
-        <MapPin className="text-blue-500" size={16}/>
-        <span>{job?.location ? job?.location : "Location Unavailable"}</span>
-      </div>
-      <div className="flex items-center gap-2">
-        <Calendar className=" text-blue-500" size={16}/>
-        <span>{new Date(job.dateTime).toLocaleString('en-US', {
-                month: 'long',
-                day: 'numeric',
-                year: 'numeric',
-                hour: 'numeric',
-                minute: 'numeric',
-                hour12: true,
-              })}</span>
-      </div>
-    </div>
-
-    Action buttons
-    <div className="mt-6.5">
-      <div className="flex gap-2">
-          <div className="">
-            <button className="cursor-pointer bg-pri-norm-1 hover:bg-pri-dark-1 text-white px-6 py-3 rounded-full transition-colors duration-300">
-              Apply
-            </button>
-          </div>
-      </div>
-    </div>
-  </Link>
-          ))}
-        </div>
-      </div>
-      </div> */}
-
       {/* Find customers */}
       <div className="lg:container mx-auto sm:px-8 my-25">
         <div className="flex flex-col lg:flex-row items-center gap-20 lg:gap-6 lg:justify-between text-center lg:text-start bg-success-light-1 py-12.5 sm:p-7.5 sm:rounded-3xl">
@@ -370,115 +290,6 @@ linear-gradient(135deg, #0f172a, #00172F)
         </div>
       </div>
 
-      {/* Artisan Reviews */}
-      {/* <div className="my-25">
-        <SectionHeader
-          subText="customer reviews"
-          text="Trusted by Professional Across Nigeria"
-        />
-
-        <div className="mt-14">
-          Row 1
-          <div className="overflow-hidden">
-            <div className="flex gap-4 animate-marquee">
-              {[...artisanReviewsItems, ...artisanReviewsItems].map(
-                (review, index) => (
-                  <div
-                    key={`row1-${index}`}
-                    className="border-[1.5px] border-neu-light-2 p-5 sm:p-7 rounded-[10px] w-[260px] sm:w-[409px] flex-shrink-0"
-                  >
-                    <div className="h-full flex flex-col">
-                      <div className="flex-grow">
-                        <p className="whitespace-normal text-sm sm:text-base text-justify">
-                          {`"${review.text}"`}
-                        </p>
-                        <div className="text-warning-norm-1 mt-3.5 flex">
-                          {[...Array(5)].map((_, i) => (
-                            <GoStarFill
-                              key={i}
-                              size={18}
-                              className="sm:size-[20px]"
-                            />
-                          ))}
-                        </div>
-                      </div>
-
-                      <div className="flex items-end justify-between mt-4 sm:mt-0">
-                        <div className="flex items-center gap-3">
-                          <img
-                            src="/avatar1.jpg"
-                            alt=""
-                            className="h-9 w-9 sm:h-10.5 sm:w-10.5 rounded-full"
-                          />
-                          <div className="text-neu-norm-3 text-xs sm:text-sm">
-                            <p>{review.name}</p>
-                            <p>{review.date}</p>
-                          </div>
-                        </div>
-                        <img
-                          src="/QuotesIcon.png"
-                          alt=""
-                          className="sm:-mb-4.5 w-10 sm:w-auto"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                )
-              )}
-            </div>
-          </div>
-          Row 2
-          <div className="overflow-hidden mt-4">
-            <div className="flex gap-4 animate-marquee-reverse">
-              {[...artisanReviewsItems, ...artisanReviewsItems].map(
-                (review, index) => (
-                  <div
-                    key={`row2-${index}`}
-                    className="border-[1.5px] border-neu-light-2 p-5 sm:p-7 rounded-[10px] w-[260px] sm:w-[409px] flex-shrink-0"
-                  >
-                    <div className="h-full flex flex-col">
-                      <div className="flex-grow">
-                        <p className="whitespace-normal text-sm sm:text-base text-justify">
-                          {`"${review.text}"`}
-                        </p>
-                        <div className="text-warning-norm-1 mt-3.5 flex">
-                          {[...Array(5)].map((_, i) => (
-                            <GoStarFill
-                              key={i}
-                              size={18}
-                              className="sm:size-[20px]"
-                            />
-                          ))}
-                        </div>
-                      </div>
-
-                      <div className="flex items-end justify-between mt-4 sm:mt-0">
-                        <div className="flex items-center gap-3">
-                          <img
-                            src="/avatar1.jpg"
-                            alt=""
-                            className="h-9 w-9 sm:h-10.5 sm:w-10.5 rounded-full"
-                          />
-                          <div className="text-neu-norm-3 text-xs sm:text-sm">
-                            <p>{review.name}</p>
-                            <p>{review.date}</p>
-                          </div>
-                        </div>
-                        <img
-                          src="/QuotesIcon.png"
-                          alt=""
-                          className="sm:-mb-4.5 w-10 sm:w-auto"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                )
-              )}
-            </div>
-          </div>
-        </div>
-      </div> */}
-
       {/* FAQ Section */}
       <div className="lg:container mx-auto px-6 sm:px-8 my-28">
         <h1 className="font-manrope font-semibold text-[26px] sm:text-[36px] text-center capitalize mb-16">
@@ -505,7 +316,7 @@ linear-gradient(135deg, #0f172a, #00172F)
               </p>
               <p>
                 Apply for jobs, negotiate prices, and get paid securely through
-                our Escrow system.
+                our secured payment system.
               </p>
             </div>
           </div>

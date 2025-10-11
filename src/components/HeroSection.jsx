@@ -17,7 +17,7 @@ function HeroSection({ bg, hClass, hText, hDesc, placeholderservice }) {
     const fetchCategories = async () => {
       try {
         const response = await fetch(
-          "https://dev.api.contraktor.africa/api/ArtisanCategory"
+          "https://api.contraktor.africa/api/ArtisanCategory"
         );
         const data = await response.json();
         console.log(data);
@@ -34,7 +34,7 @@ function HeroSection({ bg, hClass, hText, hDesc, placeholderservice }) {
     const fetchStates = async () => {
       try {
         const response = await fetch(
-          "https://dev.api.contraktor.africa/api/CustomAddress/all"
+          "https://api.contraktor.africa/api/CustomAddress/all"
         );
         const data = await response.json();
         console.log(data);

@@ -21,12 +21,18 @@ const footerLinks = {
   forCustomers: {
     title: "For Customers",
     links: [
-      { name: "Browse Artisans", href: "#" },
-      { name: "Post a Task", href: "#" },
-      { name: "How It Works", href: "#" },
-      { name: "Pricing & Payment", href: "#" },
-      { name: "Customer Support", href: "#" },
-      { name: "Download App", href: "#" },
+      {
+        name: "Browse Artisans",
+        href: "https://app.contraktor.com.ng/",
+      },
+      {
+        name: "Post a Task",
+        href: "https://app.contraktor.com.ng/",
+      },
+      { name: "How It Works", href: "#how-it-works" },
+      // { name: "Pricing & Payment", href: "#" },
+      { name: "Customer Support", href: "https://support.contraktor.com.ng" },
+      // { name: "Download App", href: "#" },
     ],
   },
   forArtisans: {
@@ -43,22 +49,44 @@ const footerLinks = {
   company: {
     title: "Company",
     links: [
-      { name: "About Us", href: "#" },
-      { name: "Careers", href: "#" },
-      { name: "Blog & Resources", href: "#" },
+      { name: "About Us", href: "#why-choose-us" },
+      // { name: "Careers", href: "#" },
+      // { name: "Blog & Resources", href: "#" },
       { name: "Contact", href: "#" },
-      { name: "Privacy Policy", href: "#" },
-      { name: "Terms of Service", href: "#" },
+      {
+        name: "Privacy Policy",
+        href: "https://app.contraktor.com.ng/privacy-policy",
+      },
+      {
+        name: "Terms of Service",
+        href: "https://app.contraktor.com.ng/terms-of-service",
+      },
     ],
   },
 };
 
 const socialLinks = [
-  { name: "Facebook", icon: <FaFacebook size={24} />, href: "#" },
-  { name: "LinkedIn", icon: <FaLinkedin size={24} />, href: "#" },
-  { name: "Twitter", icon: <FaXTwitter size={24} />, href: "#" },
-  { name: "YouTube", icon: <BsYoutube size={24} />, href: "#" },
-  { name: "Instagram", icon: <FaInstagram size={24} />, href: "#" },
+  {
+    name: "Facebook",
+    icon: <FaFacebook size={24} />,
+    href: "https://www.facebook.com/share/1A9LSPGy4s/",
+  },
+  {
+    name: "LinkedIn",
+    icon: <FaLinkedin size={24} />,
+    href: "https://www.linkedin.com/company/contraktor-com-ng/",
+  },
+  {
+    name: "Twitter",
+    icon: <FaXTwitter size={24} />,
+    href: "https://x.com/ContraktorNg?t=VE1b99ZBF4Wwg9aJCL6rCw&s=09",
+  },
+  // { name: "YouTube", icon: <BsYoutube size={24} />, href: "#" },
+  {
+    name: "Instagram",
+    icon: <FaInstagram size={24} />,
+    href: "https://www.instagram.com/contraktor.com.ng?igsh=MTl1eTB2ZHE5dWs0cA==",
+  },
 ];
 
 function CustomerLandingPage() {
@@ -80,6 +108,19 @@ function CustomerLandingPage() {
       "https://app.contraktor.com.ng/customer/find-artisans/all",
       "_blank"
     );
+  };
+
+  const handleHashLinkClick = (e, href) => {
+    if (href?.startsWith("#")) {
+      e.preventDefault();
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    }
   };
 
   const toggleItem = (index) => {
@@ -166,7 +207,10 @@ function CustomerLandingPage() {
       />
 
       {/* Hire artisans steps */}
-      <div className="lg:container mx-auto px-6 sm:px-8 my-25">
+      <div
+        id="how-it-works"
+        className="lg:container mx-auto px-6 sm:px-8 my-25"
+      >
         <SectionHeader
           subText="how it works"
           text="Hire an artisan in 3 easy steps"
@@ -756,19 +800,28 @@ function CustomerLandingPage() {
                 <ul className="space-y-4">
                   {footerLinks.forCustomers.links.map((link, index) => (
                     <li key={index}>
-                      <Link
-                        to={link.href}
-                        className="text-white hover:text-neu-light-3 transition-colors"
-                      >
-                        {link.name}
-                      </Link>
+                      {link.href?.startsWith("#") ? (
+                        <button
+                          onClick={(e) => handleHashLinkClick(e, link.href)}
+                          className="text-white hover:text-neu-light-3 transition-colors text-left"
+                        >
+                          {link.name}
+                        </button>
+                      ) : (
+                        <Link
+                          to={link.href}
+                          className="text-white hover:text-neu-light-3 transition-colors"
+                        >
+                          {link.name}
+                        </Link>
+                      )}
                     </li>
                   ))}
                 </ul>
               </div>
 
               {/* For Artisans */}
-              <div>
+              {/* <div>
                 <h3 className="text-neu-norm-1 mb-6">
                   {footerLinks.forArtisans.title}
                 </h3>
@@ -784,7 +837,7 @@ function CustomerLandingPage() {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </div> */}
 
               {/* Company */}
               <div>
@@ -794,12 +847,21 @@ function CustomerLandingPage() {
                 <ul className="space-y-4">
                   {footerLinks.company.links.map((link, index) => (
                     <li key={index}>
-                      <Link
-                        to={link.href}
-                        className="text-white hover:text-neu-light-3 transition-colors"
-                      >
-                        {link.name}
-                      </Link>
+                      {link.href?.startsWith("#") ? (
+                        <button
+                          onClick={(e) => handleHashLinkClick(e, link.href)}
+                          className="text-white hover:text-neu-light-3 transition-colors text-left"
+                        >
+                          {link.name}
+                        </button>
+                      ) : (
+                        <Link
+                          to={link.href}
+                          className="text-white hover:text-neu-light-3 transition-colors"
+                        >
+                          {link.name}
+                        </Link>
+                      )}
                     </li>
                   ))}
                 </ul>

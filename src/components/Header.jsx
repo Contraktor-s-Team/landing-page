@@ -8,7 +8,7 @@ function Header({ headerClass, logo, isArtisan }) {
       ? [
           {
             name: "find jobs",
-            to: "https://www.app.contraktor.com.ng/customer",
+            to: "https://app.contraktor.com.ng/customer",
           },
         ]
       : [

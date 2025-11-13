@@ -501,7 +501,7 @@ function CustomerLandingPage() {
             {/* App store buttons */}
             <div className="flex justify-center lg:justify-start gap-4">
               <Link
-                to="#"
+                to="https://play.google.com/store/apps/details?id=com.distrolinkservices.contraktor"
                 className="flex items-center gap-3 bg-pri-dark-1 px-4 py-3 hover:bg-pri-dark-2 rounded-full transition-colors"
               >
                 <div className="w-8 h-8">
@@ -522,7 +522,7 @@ function CustomerLandingPage() {
               </Link>
 
               <Link
-                to="#"
+                to="https://apps.apple.com/gb/app/contraktor-ng/id6752248608"
                 className="flex items-center gap-3 bg-pri-dark-1 rounded-full px-4 py-3 hover:bg-pri-dark-2 transition-colors"
               >
                 <div className="w-8 h-8">
@@ -749,7 +749,7 @@ function CustomerLandingPage() {
               {/* App store buttons */}
               <div className="flex gap-3 sm:gap-4">
                 <Link
-                  to="#"
+                  to="https://play.google.com/store/apps/details?id=com.distrolinkservices.contraktor"
                   className="flex items-center gap-3 bg-pri-dark-2 px-4 py-3 hover:bg-pri-dark-1 rounded-full transition-colors"
                 >
                   <div className="w-8 h-8">
@@ -768,7 +768,7 @@ function CustomerLandingPage() {
                 </Link>
 
                 <Link
-                  to="#"
+                  to="https://apps.apple.com/gb/app/contraktor-ng/id6752248608"
                   className="flex items-center gap-3 bg-pri-dark-2 rounded-full px-4 py-3 hover:bg-pri-dark-1 transition-colors"
                 >
                   <div className="w-8 h-8">

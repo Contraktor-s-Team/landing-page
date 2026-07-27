@@ -1,21 +1,18 @@
-import React, { useState } from "react";
+import { ArrowUpRight, Plus, X } from "lucide-react";
+import { useState } from "react";
+import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import HeroSection from "../components/HeroSection";
+import LandingPageCta from "../components/LandingPageCta";
 import SectionHeader from "../components/SectionHeader";
 import {
   // artisans,
   hireArtisansSteps,
   ReasonItems,
-  reviewsItems,
-  servicesItems,
+  servicesItems
 } from "../utils/sectionsData";
-import { ArrowUpRight, Plus, X, MapPin } from "lucide-react";
-import { GoStarFill } from "react-icons/go";
-import { Link } from "react-router-dom";
-import { BsYoutube } from "react-icons/bs";
-import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
-import LandingPageCta from "../components/LandingPageCta";
 
 const footerLinks = {
   forCustomers: {
@@ -459,12 +456,12 @@ function CustomerLandingPage() {
         <div className="flex flex-col lg:flex-row items-center gap-20 lg:gap-6 lg:justify-between text-center lg:text-start bg-success-light-1 py-12.5 sm:p-7.5 sm:rounded-3xl">
           <div className="max-w-[552px] p-4.25 sm:p-0">
             <h1 className="font-manrope font-semibold text-[28px] sm:text-[40px] leading-[1.2] capitalize lg:max-w-[387px]">
-              find customers & start earning today
+              Find trusted artisans near you
             </h1>
             <p className="text-neu-norm-3 my-9.25">
-              Join thousands of pros finding steady work. Create a profile,
-              showcase your skills, and get job requests from real customers
-              nearby.
+              Connect with skilled professionals for repairs, installations,
+              home improvements, and more. Post your job, compare quotes, and
+              hire with confidence.
             </p>
             <button
               onClick={handleSignUp}
